@@ -10,9 +10,9 @@
 
 `signatureValue` is base64urlencoded concatonation of hex encoded r, s, recoveryParam.
 
-`prepareForSigning` transforms a javascript objects similar to the approach used in `RsaSignature2017`, [used by mastodon](https://github.com/tootsuite/mastodon/blob/cabdbb7f9c1df8007749d07a2e186bb3ad35f62b/app/lib/activitypub/linked_data_signature.rb#L19). This process should be formalized better.
+`prepareForSigning` transforms a javascript objects similar to the approach used in `RsaSignature2017`, [used by mastodon](https://github.com/tootsuite/mastodon/blob/cabdbb7f9c1df8007749d07a2e186bb3ad35f62b/app/lib/activitypub/linked_data_signature.rb#L19). _This transformation should be formalized._
 
-This is transformation relies on both the `message digest algorithm` and `canonicalization algorithm`.
+This transformation relies on both the `message digest algorithm` and `canonicalization algorithm`.
 
 `signatureAttribute` can be used to select an alternative property name, such as `proof` required by the [DID spec](https://w3c-ccg.github.io/did-spec/#proof-optional).
 
