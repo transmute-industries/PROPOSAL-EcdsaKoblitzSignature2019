@@ -1,0 +1,12 @@
+{
+  "@context": "https://w3id.org/identity/v1",
+  "title": "Hello World!",
+  "signature": {
+    "type": "EcdsaKoblitzSignature2019",
+    "creator": "http://example.com:1337/user/did:example:123#main-key",
+    "domain": "example.com",
+    "nonce": "1cc3a83cf8cacef9437d6ec88b2564b4",
+    "created": "2019-01-02T16:50:40.853Z",
+    "signatureValue": "e8zpbCZH0rZXUhiYI6YWdpbX_6R-rR7KRFmD8BAVIObt7LVHUTHKjPWhSitpCy7wHJd311kBQZSHOAwFmuR5lAA"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ecdsakoblitzsignature2019",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --env node --coverage --testPathIgnorePatterns __fixtures__ -- "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019/issues"
+  },
+  "homepage": "https://github.com/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  },
+  "dependencies": {
+    "base64url": "^3.0.1",
+    "elliptic": "^6.4.1",
+    "jsonld": "^1.2.1",
+    "moment": "^2.23.0"
+  }
+}
