@@ -1,6 +1,6 @@
 # PROPOSAL EcdsaKoblitzSignature2019
 
-[![Build Status](https://travis-ci.org/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019.svg?branch=master)](https://travis-ci.org/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019)[![codecov](https://codecov.io/gh/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019/branch/master/graph/badge.svg)](https://codecov.io/gh/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019)
+[![Build Status](https://travis-ci.org/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019.svg?branch=master)](https://travis-ci.org/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019) [![codecov](https://codecov.io/gh/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019/branch/master/graph/badge.svg)](https://codecov.io/gh/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019)
 
 #### [canonicalization algorithm: URDNA2015](https://github.com/digitalbazaar/jsonld.js/#canonize-normalize)
 
