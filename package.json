@@ -1,11 +1,12 @@
 {
-  "name": "ecdsakoblitzsignature2019",
+  "name": "@transmute/ecdsakoblitzsignature2019",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",
   "scripts": {
     "test": "jest --env node --coverage --testPathIgnorePatterns __fixtures__ -- ",
-    "coverage:report": "codecov"
+    "codecov": "codecov",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   "homepage": "https://github.com/transmute-industries/PROPOSAL-EcdsaKoblitzSignature2019#readme",
   "devDependencies": {
     "codecov": "^3.1.0",
+    "coveralls": "^3.0.2",
     "jest": "^23.6.0"
   },
   "dependencies": {
