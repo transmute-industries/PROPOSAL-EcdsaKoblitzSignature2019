@@ -6,7 +6,7 @@ const EC = require("elliptic").ec;
 
 const secp256k1 = new EC("secp256k1");
 
-const { sha256, prepareForSigning } = require("./helpers");
+const { sha256, createVerifyData } = require("./common");
 
 const leftpad = data => {
   return "0".repeat(64 - data.length) + data;
@@ -46,6 +46,11 @@ const sign = async ({
   privateKey,
   signatureAttribute
 }) => {
+  if (typeof data === "string") {
+    throw new Error(
+      "EcdsaKoblitzSignature2019 is for signing json linked data objects, received string data."
+    );
+  }
   if (!creator) {
     throw new Error("creator is required.");
   }
@@ -65,7 +70,7 @@ const sign = async ({
   }
 
   const toBeSigned = Buffer.from(
-    sha256(await prepareForSigning(data, options, signatureAttribute)),
+    sha256(await createVerifyData(data, options, signatureAttribute)),
     "hex"
   );
 
@@ -98,11 +103,7 @@ const verify = async ({ data, publicKey, signatureAttribute }) => {
   );
   const hash = Buffer.from(
     sha256(
-      await prepareForSigning(
-        data,
-        data[signatureAttribute],
-        signatureAttribute
-      )
+      await createVerifyData(data, data[signatureAttribute], signatureAttribute)
     ),
     "hex"
   );

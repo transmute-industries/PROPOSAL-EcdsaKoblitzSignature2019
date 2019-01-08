@@ -34,7 +34,7 @@ describe("EcdsaKoblitzSignature2019", () => {
         privateKey: keypair.privateKey
       });
     } catch (e) {
-      expect(e.message).toBe("Strings are not supported.");
+      expect(e.message).toBe("EcdsaKoblitzSignature2019 is for signing json linked data objects, received string data.");
     }
   });
 
