@@ -98,6 +98,12 @@ const verify = async ({ data, publicKey, signatureAttribute }) => {
   if (!signatureAttribute) {
     signatureAttribute = "signature";
   }
+
+  // bip39 hdkey support
+  if (publicKey.length === 128) {
+    publicKey = "04" + publicKey;
+  }
+
   const signatureObject = signatureTokenToObject(
     data[signatureAttribute].signatureValue
   );
@@ -107,12 +113,11 @@ const verify = async ({ data, publicKey, signatureAttribute }) => {
     ),
     "hex"
   );
-  const recoveredKey = secp256k1.recoverPubKey(
-    hash,
-    signatureObject,
-    signatureObject.recoveryParam
-  );
-  return recoveredKey.encode("hex") === `${publicKey}`;
+  const recoveredKey = secp256k1
+    .recoverPubKey(hash, signatureObject, signatureObject.recoveryParam)
+    .encode("hex");
+
+  return recoveredKey === `${publicKey}`;
 };
 module.exports = {
   sign,
