@@ -18,7 +18,7 @@ We set out to provide a reference implementation in JavaScript.
 
 `createVerifyData` transforms a javascript objects similar to the approach used in `RsaSignature2017`, [used by mastodon](https://github.com/tootsuite/mastodon/blob/cabdbb7f9c1df8007749d07a2e186bb3ad35f62b/app/lib/activitypub/linked_data_signature.rb#L19). 
 
-_This transformation should be formalized, as it relies on both the `message digest algorithm` and `canonicalization algorithm`._
+createVerifyData is described [here].(https://w3c-dvcg.github.io/ld-signatures/#create-verify-hash-algorithm)
 
 `signatureAttribute` can be used to select an alternative property name, such as `proof` required by the [DID spec](https://w3c-ccg.github.io/did-spec/#proof-optional).
 
