@@ -36,6 +36,13 @@ It is possible to alter the signature format used by EcdsaKoblitzSignature2019 t
 
 createVerifyData is described [here](https://w3c-dvcg.github.io/ld-signatures/#create-verify-hash-algorithm)
 
+## Details
+
+This signature suite follows the approach taken by:
+- [Ed25519Signature2018](https://github.com/transmute-industries/Ed25519Signature2018)
+- [RsaSignature2017](https://github.com/transmute-industries/RsaSignature2017)
+- [EcdsaKoblitzSignature2016](https://github.com/transmute-industries/EcdsaKoblitzSignature2016)
+
 
 Commercial Support
 ------------------
