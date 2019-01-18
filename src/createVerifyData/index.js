@@ -38,9 +38,9 @@ const createVerifyData = async (data, signatureOptions) => {
   if (!signatureOptions.created) {
     signatureOptions.created = new Date().toISOString();
   }
-  if (!signatureOptions.type === "Ed25519Signature2018") {
-    signatureOptions.type = "Ed25519Signature2018";
-  }
+
+  signatureOptions.type = "EcdsaKoblitzSignature2019";
+
   const [expanded] = await jsonld.expand(data);
   const framed = await jsonld.compact(
     expanded,
