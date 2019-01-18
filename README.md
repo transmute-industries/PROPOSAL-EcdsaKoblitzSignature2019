@@ -37,6 +37,12 @@ It is possible to alter the signature format used by EcdsaKoblitzSignature2019 t
 createVerifyData is described [here](https://w3c-dvcg.github.io/ld-signatures/#create-verify-hash-algorithm)
 
 
+Commercial Support
+------------------
+
+Commercial support for this library is available upon request from
+Transmute: support@transmute.industries.
+
 ## W3C Links
 
 #### [Linked Data Cryptographic Suite Registry](https://w3c-ccg.github.io/ld-cryptosuite-registry)
@@ -44,3 +50,4 @@ createVerifyData is described [here](https://w3c-dvcg.github.io/ld-signatures/#c
 #### [Linked Data Signatures](https://w3c-dvcg.github.io/ld-signatures)
 
 #### [Decentralized Identifiers](https://w3c-ccg.github.io/did-spec/)
+
