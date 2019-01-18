@@ -10,9 +10,17 @@ We set out to provide a reference implementation in JavaScript.
 
 We also seek to remedy confusion over how JWT and JSON-LD Signatures are compatible, this implementation differs significantly from [Ed25519Signature2018](https://github.com/digitalbazaar/jsonld-signatures/blob/master/lib/suites/Ed25519Signature2018.js#L32). 
 
-If the signature is a valid JWS, then its property name should be `jws`, this library's signatures are `base64Url(hex(leftpad(r),hex(leftpad(s)),hex(v))`. This means that no JWS header is validated when the signature is verified. It also means this signature suite can be used to create a valid JWS for `ES256K-R`, but note that the JOSE algorithm registry does not contain these algorithms yet, and you may have trouble validating JWTs generated with these values such as [did-jwt](https://github.com/uport-project/did-jwt)
+If the signature is a valid JWS, then its property name should be `jws`, this library's signatures are `base64Url(hex(leftpad(r),hex(leftpad(s)),hex(v))`. This means that no JWS header is validated when the signature is verified. 
+
+It also means this signature suites internal signature method can be used to create a valid JWS for `ES256K-R`, but note that the JOSE algorithm registry does not contain these algorithms yet, and you may have trouble validating JWTs generated with these values such as [did-jwt](https://github.com/uport-project/did-jwt). When `ES256K-R` is added to JOSE, it would be best to use a JWS approach like the one used for Ed25519Signature2018. 
 
 [JSON Web Token (JWT) with ES256K (secp256k1) signature](https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-es256k-signature)
+
+A linked data signature suite is for signing and verifying json-ld. JWS as used in JWTs are used for signing and verifying normal json objects, and in particular, there is no cannonization applied. This means that although EcdsaKoblitzSignature2019 and did-jwt both have signatues of the form `base64Url(hex(leftpad(r),hex(leftpad(s)),hex(v))`, they are not doing the same thing. One is used to create and verify JWTs, the other is uses to sign and verify json-ld. Both use ecdsa over secp256k1, but EcdsaKoblitzSignature2019 signs verifyData constructed from cannonized and hashing the document and its signatureOptions whereas did-jwt signs a `sha256(base64Url(JSON.stringify(header)).base64Url(JSON.stringify(payload)))`. Though the signature algorithm and encoding of signature is the same, the preprocessing of json and intentions are different.
+
+The correct way to unify these is the way Ed25519Signature2018 is implemented, but this cannot be done until JOSE supports `ES256K-R`.
+
+It is possible to alter the signature format used by EcdsaKoblitzSignature2019 to be more like Ed25519Signature2018, in anticipation of JOSE support. Its unclear if that should be done or not.
 
 ### Linked Data Signature Suite Details
 
