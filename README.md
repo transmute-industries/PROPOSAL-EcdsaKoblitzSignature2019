@@ -14,6 +14,8 @@ If the signature is a valid JWS, then its property name should be `jws`, this li
 
 [JSON Web Token (JWT) with ES256K (secp256k1) signature](https://connect2id.com/products/nimbus-jose-jwt/examples/jwt-with-es256k-signature)
 
+### Linked Data Signature Suite Details
+
 #### [canonicalization algorithm: URDNA2015](https://github.com/digitalbazaar/jsonld.js/#canonize-normalize)
 
 #### [message digest algorithm: sha256](https://nodejs.org/api/crypto.html#crypto_crypto_createhash_algorithm_options)
