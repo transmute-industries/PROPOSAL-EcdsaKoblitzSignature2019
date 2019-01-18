@@ -9,7 +9,19 @@ const keypair = {
 
 const creator = "http://example.com:1337/user/did:example:123#main-key";
 
+const signatureHex =
+  "b7b1f1850828fa3c649e32d3a48d3683579232f2f9d677e2ac1b8a30d83b0350813b955401b52fc78d460c9f0bd6c0e086562d689e58e6681460a8963ce8c88801";
+
+const base64UrlEncoded =
+  "3HeUs2ZWwLfiYWXUF83jteAh5kEwFOz7Of3RCwnAIntEmMCIlCra_JYz7O0k7i2lqNoT4UoiP2ltiH0xtl4m3wA";
+
+const uportJWT =
+  "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NkstUiJ9.eyJpYXQiOjE1NDc3NzU4NzcsImF1ZCI6ImRpZDpleGFtcGxlOjEyMyIsImV4cCI6MTk1NzQ2MzQyMSwibmFtZSI6InVQb3J0IERldmVsb3BlciIsImlzcyI6ImRpZDpleGFtcGxlOjEyMyJ9.JpJzcFttM0HlYh0J-wwYCAXJ_b5Dx2x2LpzoQjwwzNEQPLtTm4p1sCqotiDpm-JYKphvvYbReUIB_1zonbD2hQA";
+
 module.exports = {
+  uportJWT,
+  signatureHex,
+  base64UrlEncoded,
   linkedData,
   signedLinkedData,
   keypair,
